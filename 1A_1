@@ -1,0 +1,31 @@
+// Write a function that receives 5 integers and returns the sum, average, and standard deviation of these numbers. Call this function from main() and print the results in main().
+#include <stdio.h>
+#include <stdlib.h>
+#include <math.h>
+void function(int *, int *, double *);
+int main()
+{
+    int sum, average;
+    double standard_deviation;
+    function(&sum, &average, &standard_deviation);
+    printf("The sum is:%d\n", sum);
+    printf("The average is:%d\n", average);
+    printf("The standard deviation is:%lf", standard_deviation);
+}
+void function(int *sum, int *average, double *standard_deviation)
+{
+    int n1, n2, n3, n4, n5;
+    printf("Enter the first number:");
+    scanf("%d", &n1);
+    printf("Enter the second number:");
+    scanf("%d", &n2);
+    printf("Enter the third number:");
+    scanf("%d", &n3);
+    printf("Enter the fourth number:");
+    scanf("%d", &n4);
+    printf("Enter the fifth number:");
+    scanf("%d", &n5);
+    *sum=n1+n2+n3+n4+n5;
+    *average=*sum/5;
+    *standard_deviation=sqrt((pow((n1-*average), 2)+pow((n2-*average), 2)+pow((n3-*average), 2)+pow((n4-*average), 2)+pow((n5-*average), 2))/5);
+}
