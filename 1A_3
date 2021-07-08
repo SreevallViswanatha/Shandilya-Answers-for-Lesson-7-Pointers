@@ -5,7 +5,7 @@ void factorial(int *);
 int main()
 {
     double x,ax,sin_x=0, temp;
-    int i, sign=-1;
+    int i, sign=-1, n;
     printf("Enter x: ");
     scanf("%lf", &x);
     ax=x;
@@ -13,12 +13,12 @@ int main()
     for(i=1;i<=19;i=i+2)
     {
         sign = -sign;
-        factorial(&i);
-        temp = sign*pow(x,i)/i;
-        sin_x = temp + sin_x;
+        n=i;
+        factorial(&n);
+        temp = sign*pow(x,i)/n;
+        sin_x+=temp;
     }
     printf("Sin(%.2lf) %lf\n", ax,sin_x);
-    printf("%lf", sin(x));
 }
 void factorial(int *n)
 {
