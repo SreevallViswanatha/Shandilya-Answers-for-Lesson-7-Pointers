@@ -1,0 +1,27 @@
+// Given three variables x, y, z write a function to circularly shift their values to right. In other words if x=5, y=8, z=10, after circular shift y=5, z=8, x=10.
+#include<stdio.h>
+void shift(int *a, int *b, int *c);
+int main()
+{
+    int x, y, z;
+
+    printf("Enter x: ");
+    scanf("%d", &x);
+    printf("Enter y: ");
+    scanf("%d", &y);
+    printf("Enter z: ");
+    scanf("%d", &z);
+
+    printf("Before Shift: x: %d\ty: %d\tz: %d",x,y,z);
+    //call the shift function
+    shift(&x, &y, &z);
+    printf("\nAfter Shift: x: %d\ty: %d\tz: %d",x,y,z);
+}
+void shift(int *a, int *b, int *c)
+{
+    int temp;
+    temp = *c;
+    *c = *b;
+    *b = *a;
+    *a = temp;
+}
