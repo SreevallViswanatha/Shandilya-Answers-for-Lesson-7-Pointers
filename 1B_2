@@ -1,0 +1,24 @@
+// Write a function to calculate area of a triangle given the sides.
+#include <stdio.h>
+#include <stdlib.h>
+#include <math.h>
+void calarea(float *);
+int main()
+{
+    float area;
+    calarea(&area);
+    printf("The area of the triangle is:%.2f", area);
+}
+void calarea(float *area)
+{
+    int side1, side2, side3;
+    float semiperimeter;
+    printf("Enter the first side of the triangle:");
+    scanf("%d", &side1);
+    printf("Enter the second side of the triangle:");
+    scanf("%d", &side2);
+    printf("Enter the third side of the triangle:");
+    scanf("%d", &side3);
+    semiperimeter=(side1+side2+side3)/2.0;
+    *area=sqrt(semiperimeter*(semiperimeter-side1)*(semiperimeter-side2)*(semiperimeter-side3));
+}
