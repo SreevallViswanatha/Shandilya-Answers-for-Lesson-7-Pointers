@@ -1,0 +1,18 @@
+// WAP to add numbers using call by reference
+#include <stdio.h>
+#include <stdlib.h>
+void calsum(int, int, int *);
+int main()
+{
+    int a, b, sum;
+    printf("Enter the first number:");
+    scanf("%d", &a);
+    printf("Enter the second number:");
+    scanf("%d", &b);
+    calsum(a, b, &sum);
+    printf("The sum is:%d", sum);
+}
+void calsum(int a, int b, int *sum)
+{
+    *sum=a+b;
+}
