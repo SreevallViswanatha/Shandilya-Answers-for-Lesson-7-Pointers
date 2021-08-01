@@ -1,0 +1,55 @@
+// Write a function to compute the distance between two points. Use this function to compute the area of a triangle with points (x1, y1), (x2, y2), and (x3, y3).
+#include <stdio.h>
+#include <stdlib.h>
+#include <math.h>
+void caldistance(int, int, int, int, float *);
+void calarea(int, int, int, int, int, int, float *);
+int insout();
+int main()
+{
+    printf("%d", insout());
+}
+void calarea(int x1, int y1, int x2, int y2, int x3, int y3, float *area)
+{
+    float distance1, distance2, distance3, semiperimeter;
+    caldistance(x1, y1, x2, y2, &distance1);
+    caldistance(x2, y2, x3, y3, &distance2);
+    caldistance(x1, y1, x3, y3, &distance3);
+    semiperimeter=(distance1+distance2+distance3)/2.0;
+    *area=sqrt(semiperimeter*(semiperimeter-distance1)*(semiperimeter-distance2)*(semiperimeter-distance3));
+}
+void caldistance(int x1, int y1, int x2, int y2, float *distance)
+{
+    *distance=sqrt(pow((x2-x1), 2.0)+pow((y2-y1), 2.0));
+}
+int insout()
+{
+    int x1, y1, x2, y2, x3, y3, x, y, sum, area;
+    float areat, area1, area2, area3;
+    printf("Enter the first x-coordinate of the triangle:");
+    scanf("%d", &x1);
+    printf("Enter the first y-coordinate of the triangle:");
+    scanf("%d", &y1);
+    printf("Enter the second x-coordinate of the triangle:");
+    scanf("%d", &x2);
+    printf("Enter the second y-coordinate of the triangle:");
+    scanf("%d", &y2);
+    printf("Enter the third x-coordinate of the triangle:");
+    scanf("%d", &x3);
+    printf("Enter the third y-coordinate of the triangle:");
+    scanf("%d", &y3);
+    printf("Enter any x-coordinate:");
+    scanf("%d", &x);
+    printf("Enter any y-coordinate:");
+    scanf("%d", &y);
+    calarea(x1, y1, x2, y2, x3, y3, &areat);
+    calarea(x1, y1, x2, y2, x, y, &area1);
+    calarea(x2, y2, x3, y3, x, y, &area2);
+    calarea(x1, y1, x3, y3, x, y, &area3);
+    sum=area1+area2+area3;
+    area=areat;
+    if(sum==area)
+        return 1;
+    else
+        return 0;
+}
