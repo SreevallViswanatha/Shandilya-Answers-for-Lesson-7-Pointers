@@ -1,0 +1,39 @@
+// WAP to find the GCF of two numbers using the Euclidean algorithm.
+#include <stdio.h>
+#include <stdlib.h>
+void calGCF(int, int, int *);
+int main()
+{
+    int a, b, GCF;
+    printf("Enter a number:");
+    scanf("%d", &a);
+    printf("Enter another number:");
+    scanf("%d", &b);
+    calGCF(a, b, &GCF);
+    printf("The greatest common factor of %d and %d is %d.", a, b, GCF);
+}
+void calGCF(int numerator, int denominator, int *GCF)
+{
+    int temp, number;
+    if(denominator==0)
+    {
+        *GCF=numerator;
+    }
+    else if(numerator == 0)
+    {
+        *GCF=denominator;
+    }
+    else
+    {
+        number=numerator/denominator;
+        temp=numerator-number*denominator;
+        for(; temp>0;)
+        {
+            numerator=denominator;
+            denominator=temp;
+            number=numerator/denominator;
+            temp=numerator-number*denominator;
+        }
+        *GCF=denominator;
+    }
+}
