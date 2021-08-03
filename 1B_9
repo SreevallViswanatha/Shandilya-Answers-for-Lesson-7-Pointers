@@ -1,0 +1,24 @@
+// WAP to find the largest element.
+#include <stdio.h>
+#include <stdlib.h>
+void largel(int *);
+int main()
+{
+    int largest;
+    largel(&largest);
+    printf("The largest number is:%d", largest);
+}
+void largel(int *largest)
+{
+    int i=1, l=1, number, j;
+    printf("How many elements do you want to enter?");
+    scanf("%d", &j);
+    for(; i<=j; i++)
+    {
+        printf("Element %d:", i);
+        scanf("%d", &number);
+        if(l<number)
+            l=number;
+    }
+    *largest=l;
+}
