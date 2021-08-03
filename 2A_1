@@ -1,0 +1,18 @@
+// Write a program in C to Calculate the length of the string using a pointer.
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+void callength(char [], int *);
+int main()
+{
+    char str[1000];
+    int length;
+    printf("Enter any string:");
+    scanf("%s", str);
+    callength(str, &length);
+    printf("The length of %s is:%d", str, length);
+}
+void callength(char str[], int *length)
+{
+    *length=strlen(str);
+}
