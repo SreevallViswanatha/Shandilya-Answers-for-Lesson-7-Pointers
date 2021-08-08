@@ -1,0 +1,27 @@
+// Write a program in C to count the number of vowels and consonants in a string using a pointer.
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+int main()
+{
+    char str[1000], c;
+    int length, *vowels, *consonants, v=0, co=0;
+    printf("Enter a string:");
+    scanf("%s", str);
+    length=strlen(str);
+    for(; length>0; length--)
+    {
+        c=str[length-1];
+        if((c==65)||(c==97)||(c==69)||(c==102)||(c==73)||(c==105)||(c==79)||(c==111)||(c==85)||(c==117))
+        {
+            v++;
+        }
+        else if((c>=65)&&(c<=122)&&(c!=65)&&(c!=97)&&(c!=69)&&(c!=102)&&(c!=73)&&(c!=105)&&(c!=79)&&(c!=111)&&(c!=85)&&(c=117))
+        {
+            co++;
+        }
+    }
+    vowels=&v;
+    consonants=&co;
+    printf("%s has %d vowels and %d consonants.", str, *vowels, *consonants);
+}
