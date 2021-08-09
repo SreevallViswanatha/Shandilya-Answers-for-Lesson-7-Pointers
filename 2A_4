@@ -12,16 +12,16 @@ int main()
     for(; length>0; length--)
     {
         c=str[length-1];
-        if((c==65)||(c==97)||(c==69)||(c==102)||(c==73)||(c==105)||(c==79)||(c==111)||(c==85)||(c==117))
+        if((c==65)||(c==97)||(c==69)||(c==101)||(c==73)||(c==105)||(c==79)||(c==111)||(c==85)||(c==117))
         {
             v++;
         }
-        else if((c>=65)&&(c<=122)&&(c!=65)&&(c!=97)&&(c!=69)&&(c!=102)&&(c!=73)&&(c!=105)&&(c!=79)&&(c!=111)&&(c!=85)&&(c=117))
+        else if((c>=65)&&(c<=122)&&(c!=65)&&(c!=97)&&(c!=69)&&(c!=101)&&(c!=73)&&(c!=105)&&(c!=79)&&(c!=111)&&(c!=85)&&(c=117))
         {
             co++;
         }
     }
     vowels=&v;
     consonants=&co;
-    printf("%s has %d vowels and %d consonants.", str, *vowels, *consonants);
+    printf("%s has %d vowel(s) and %d consonant(s).", str, *vowels, *consonants);
 }
