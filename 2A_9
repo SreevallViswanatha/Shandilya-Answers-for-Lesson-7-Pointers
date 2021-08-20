@@ -1,0 +1,22 @@
+// Create a function to take two numbers (int) and set both of them to the highest of the two.
+#include <stdio.h>
+#include <stdlib.h>
+void highest(int *, int *);
+int main()
+{
+    int a, b;
+    printf("Enter a number:");
+    scanf("%d", &a);
+    printf("Enter another number:");
+    scanf("%d", &b);
+    printf("Before setting:a=%d b=%d\n", a, b);
+    highest(&a, &b);
+    printf("After setting:a=%d b=%d", a, b);
+}
+void highest(int *a, int *b)
+{
+    if(*a>*b)
+        *b=*a;
+    else
+        *a=*b;
+}
